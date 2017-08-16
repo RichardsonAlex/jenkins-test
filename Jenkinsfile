@@ -9,16 +9,16 @@ for (x in targets) {
         // build steps that should happen on all nodes go here
         def sdkImage = docker.image("ctsrd/cheri-sdk-${label}:latest")
         sdkImage.pull() // make sure we have the latest available from Docker Hub
-        stage('build') {
+        stage("build ${label}") {
           sdkImage.inside {
             sh 'echo Running in SDK image && clang -v'
           }
         }
-        stage('test') {
-        }
-        ansiColor('xterm') {
-          // Just some echoes to show the ANSI color.
-          stage "\u001B[31mI'm Red\u001B[0m Now not"
+        stage("test ${label}") {
+          ansiColor('xterm') {
+            // Just some echoes to show the ANSI color.
+            sh "\u001B[31mI'm Red\u001B[0m Now not"
+          }
         }
       }
     }
