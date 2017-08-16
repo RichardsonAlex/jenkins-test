@@ -17,7 +17,7 @@ for (x in targets) {
         stage("test ${label}") {
           ansiColor('xterm') {
             // Just some echoes to show the ANSI color.
-            sh "\u001B[31mI'm Red\u001B[0m Now not"
+            sh 'echo "\u001B[31mI'm Red\u001B[0m Now not"'
           }
         }
       }
