@@ -37,11 +37,6 @@ pipeline {
         
       }
     }
-    stage('stage3') {
-      steps {
-        warnings()
-      }
-    }
   }
   post {
     always {
