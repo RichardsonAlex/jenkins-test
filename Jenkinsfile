@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'ctsrd/cheri-sdk-cheri256'
+      image 'alpine'
     }
     
   }
